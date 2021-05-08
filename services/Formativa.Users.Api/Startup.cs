@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Formativa.Users.Api.Application;
+using Formativa.Users.Api.Application.Contracts;
 using Formativa.Users.Api.Infraestructure.Persistence.Database;
 using Formativa.Users.Api.Infraestructure.Persistence.Repositories;
 using Formativa.Users.Api.Infraestructure.Persistence.Repositories.Contracts;
@@ -44,6 +46,7 @@ namespace Formativa.Users.Api
             //services.AddSingleton<IUserRepository, UserRepository>();
 
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUserService, UserService>();
 
             //services.AddTransient<IUserRepository, UserRepository>();
 

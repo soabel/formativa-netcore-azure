@@ -19,5 +19,7 @@
     <Folder Include="Infraestructure\Persistence\Repositories\" />
     <Folder Include="Infraestructure\Persistence\Entities\" />
     <Folder Include="Infraestructure\Persistence\Repositories\Contracts\" />
+    <Folder Include="Application\Contracts\" />
+    <Folder Include="Application\Dtos\" />
   </ItemGroup>
 </Project>

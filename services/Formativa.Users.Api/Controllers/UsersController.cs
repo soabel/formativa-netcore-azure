@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Formativa.Users.Api.Controllers
 {
+    [ApiController]
     [Route("api/[controller]")]
     public class UsersController : Controller
     {
@@ -30,7 +31,7 @@ namespace Formativa.Users.Api.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public  Task<User> Get(int id)
+        public  Task<UserDto> Get(int id)
         {
             return  this.userService.FindById(id);
         }

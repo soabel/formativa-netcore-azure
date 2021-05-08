@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{D7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formativa.Users.Api", "services\Formativa.Users.Api\Formativa.Users.Api.csproj", "{49621A80-7414-42B5-B965-FEFD21AF5E5C}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{DF3F6256-8212-4FD6-B336-9E0C461496AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{49621A80-7414-42B5-B965-FEFD21AF5E5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49621A80-7414-42B5-B965-FEFD21AF5E5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49621A80-7414-42B5-B965-FEFD21AF5E5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF3F6256-8212-4FD6-B336-9E0C461496AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF3F6256-8212-4FD6-B336-9E0C461496AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF3F6256-8212-4FD6-B336-9E0C461496AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF3F6256-8212-4FD6-B336-9E0C461496AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

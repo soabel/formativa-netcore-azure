@@ -10,7 +10,7 @@ namespace Formativa.Users.Api.Application.Contracts
     {
         Task<List<UserDto>> FindAll();
 
-        Task<User> FindById(int id);
+        Task<UserDto> FindById(int id);
 
         int Add(User user);
 

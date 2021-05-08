@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using AutoMapper;
 using Formativa.Users.Api.Application.Contracts;
 using Formativa.Users.Api.Application.Dtos;
 using Formativa.Users.Api.Infraestructure.Persistence.Entities;
@@ -11,10 +12,12 @@ namespace Formativa.Users.Api.Application
     public class UserService: IUserService
     {
         private readonly IUserRepository userRepository;
+        private readonly IMapper mapper;
 
-        public UserService(IUserRepository userRepository)
+        public UserService(IUserRepository userRepository, IMapper mapper)
         {
             this.userRepository = userRepository;
+            this.mapper = mapper;
         }
 
         public int Add(User user)
@@ -36,17 +39,20 @@ namespace Formativa.Users.Api.Application
         {
             var result = await this.userRepository.FindAll();
 
-            var listDto = new List<UserDto>();
-            result.ForEach(x => {
-                listDto.Add(new UserDto { Id = x.Id, Email = x.Email, Name = x.Name, Address=x.Address });
-            });
+            //var listDto = new List<UserDto>();
+            //result.ForEach(x => {
+            //    listDto.Add(new UserDto { Id = x.Id, Email = x.Email, Name = x.Name, Address=x.Address });
+            //});
 
-            return listDto  ;
+            return this.mapper.Map<List<UserDto>>(result);
+
         }
 
-        public Task<User> FindById(int id)
+        public async Task<UserDto> FindById(int id)
         {
-            return this.userRepository.FindById(id);
+            var result= await this.userRepository.FindById(id);
+
+            return this.mapper.Map<UserDto>(result);
         }
 
         public int Update(int id, User user)

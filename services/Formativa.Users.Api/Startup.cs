@@ -2,8 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using FluentValidation.AspNetCore;
 using Formativa.Users.Api.Application;
 using Formativa.Users.Api.Application.Contracts;
+using Formativa.Users.Api.Infraestructure.Core.Mappers;
 using Formativa.Users.Api.Infraestructure.Persistence.Database;
 using Formativa.Users.Api.Infraestructure.Persistence.Repositories;
 using Formativa.Users.Api.Infraestructure.Persistence.Repositories.Contracts;
@@ -36,7 +39,12 @@ namespace Formativa.Users.Api
              options.UseSqlServer(Configuration.GetConnectionString("DatabaseConnection")
              ));
 
-            services.AddControllers();
+            services.AddControllers()
+                 .AddFluentValidation(s =>
+                 {
+                     s.RegisterValidatorsFromAssemblyContaining<Startup>();
+                 });
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Formativa.Users.Api", Version = "v1" });
@@ -49,6 +57,16 @@ namespace Formativa.Users.Api
             services.AddScoped<IUserService, UserService>();
 
             //services.AddTransient<IUserRepository, UserRepository>();
+
+            // Auto Mapper Configurations  
+            var mappingConfig = new MapperConfiguration(mc => {
+                mc.AddProfile(new UsersMapper());
+            });
+            IMapper mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
+
+            
+
 
         }
 

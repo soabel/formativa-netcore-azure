@@ -23,6 +23,18 @@
       ],
       "UpstreamPathTemplate": "/gateway/users",
       "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE", "PATCH" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/orders/{catchAll}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 65270
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/orders",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE", "PATCH" ]
     }
   ],
   "GlobalConfiguration": {

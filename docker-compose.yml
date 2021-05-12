@@ -6,3 +6,17 @@ services:
     build:
       context: .
       dockerfile: services/Formativa.Users.Api/Dockerfile
+
+  formativa.catalog.api:
+    image: ${DOCKER_REGISTRY-}formativacatalog
+    build:
+      context: .
+      dockerfile: services/Formativa.Users.Api/Formativa.Catalog.Api/Dockerfile
+
+
+  formativa.gateway.api:
+    image: ${DOCKER_REGISTRY-}formativagateway
+    build:
+      context: .
+      dockerfile: gateway/Formativa.Gateway.Api/Dockerfile
+

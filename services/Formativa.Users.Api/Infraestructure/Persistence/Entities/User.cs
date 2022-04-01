@@ -1,4 +1,7 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
+
+
 namespace Formativa.Users.Api.Infraestructure.Persistence.Entities
 {
     public class User

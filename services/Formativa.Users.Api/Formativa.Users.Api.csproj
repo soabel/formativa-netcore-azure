@@ -28,5 +28,9 @@
     <Folder Include="Infraestructure\Core\" />
     <Folder Include="Infraestructure\Core\Mappers\" />
     <Folder Include="Infraestructure\Core\Validations\" />
+    <Folder Include="Wrappers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Wrappers\" />
   </ItemGroup>
 </Project>

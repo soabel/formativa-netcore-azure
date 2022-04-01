@@ -9,13 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formativa.Users.Api", "serv
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{DF3F6256-8212-4FD6-B336-9E0C461496AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formativa.Catalog.Api", "services\Formativa.Users.Api\Formativa.Catalog.Api\Formativa.Catalog.Api.csproj", "{239942FF-2DFA-4361-AA01-339E0BB31300}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gateway", "gateway", "{A6EFFE10-30BB-4C6A-87D5-ACB1C1CFA4E5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formativa.Gateway.Api", "gateway\Formativa.Gateway.Api\Formativa.Gateway.Api.csproj", "{A36DC3ED-87B1-494F-A275-FB4FF8DD65EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formativa.Orders.Api", "services\Formativa.Users.Api\Formativa.Orders.Api\Formativa.Orders.Api.csproj", "{6D53EF14-805D-4D9D-8B4B-F9AF5C75C96C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formativa.Orders.Api", "services\Formativa.Orders.Api\Formativa.Orders.Api.csproj", "{7D41A941-D7A9-4CD2-8F80-0E80A20E7646}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formativa.Catalog.Api", "services\Formativa.Catalog.Api\Formativa.Catalog.Api.csproj", "{49E86AE6-1DE0-4168-9142-4B7D71FC307D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,18 +31,18 @@ Global
 		{DF3F6256-8212-4FD6-B336-9E0C461496AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF3F6256-8212-4FD6-B336-9E0C461496AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF3F6256-8212-4FD6-B336-9E0C461496AF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{239942FF-2DFA-4361-AA01-339E0BB31300}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{239942FF-2DFA-4361-AA01-339E0BB31300}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{239942FF-2DFA-4361-AA01-339E0BB31300}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{239942FF-2DFA-4361-AA01-339E0BB31300}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A36DC3ED-87B1-494F-A275-FB4FF8DD65EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A36DC3ED-87B1-494F-A275-FB4FF8DD65EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A36DC3ED-87B1-494F-A275-FB4FF8DD65EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A36DC3ED-87B1-494F-A275-FB4FF8DD65EC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6D53EF14-805D-4D9D-8B4B-F9AF5C75C96C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6D53EF14-805D-4D9D-8B4B-F9AF5C75C96C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6D53EF14-805D-4D9D-8B4B-F9AF5C75C96C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6D53EF14-805D-4D9D-8B4B-F9AF5C75C96C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D41A941-D7A9-4CD2-8F80-0E80A20E7646}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D41A941-D7A9-4CD2-8F80-0E80A20E7646}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D41A941-D7A9-4CD2-8F80-0E80A20E7646}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D41A941-D7A9-4CD2-8F80-0E80A20E7646}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49E86AE6-1DE0-4168-9142-4B7D71FC307D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49E86AE6-1DE0-4168-9142-4B7D71FC307D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49E86AE6-1DE0-4168-9142-4B7D71FC307D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49E86AE6-1DE0-4168-9142-4B7D71FC307D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,8 +52,8 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{49621A80-7414-42B5-B965-FEFD21AF5E5C} = {D783DFEA-B3B3-43D6-A3A1-FBC7C4B63082}
-		{239942FF-2DFA-4361-AA01-339E0BB31300} = {D783DFEA-B3B3-43D6-A3A1-FBC7C4B63082}
 		{A36DC3ED-87B1-494F-A275-FB4FF8DD65EC} = {A6EFFE10-30BB-4C6A-87D5-ACB1C1CFA4E5}
-		{6D53EF14-805D-4D9D-8B4B-F9AF5C75C96C} = {D783DFEA-B3B3-43D6-A3A1-FBC7C4B63082}
+		{7D41A941-D7A9-4CD2-8F80-0E80A20E7646} = {D783DFEA-B3B3-43D6-A3A1-FBC7C4B63082}
+		{49E86AE6-1DE0-4168-9142-4B7D71FC307D} = {D783DFEA-B3B3-43D6-A3A1-FBC7C4B63082}
 	EndGlobalSection
 EndGlobal

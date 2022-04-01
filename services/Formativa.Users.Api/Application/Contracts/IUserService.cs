@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Formativa.Users.Api.Application.Dtos;
 using Formativa.Users.Api.Infraestructure.Persistence.Entities;
+using Formativa.Users.Api.Wrappers;
 
 namespace Formativa.Users.Api.Application.Contracts
 {
@@ -11,6 +12,9 @@ namespace Formativa.Users.Api.Application.Contracts
         Task<List<UserDto>> FindAll();
 
         Task<UserDto> FindById(int id);
+
+        Task<List<User>> FindByName(string name);
+
 
         int Add(User user);
 

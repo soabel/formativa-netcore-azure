@@ -6,6 +6,7 @@ using Formativa.Users.Api.Application.Contracts;
 using Formativa.Users.Api.Application.Dtos;
 using Formativa.Users.Api.Infraestructure.Persistence.Entities;
 using Formativa.Users.Api.Infraestructure.Persistence.Repositories.Contracts;
+using Formativa.Users.Api.Wrappers;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -33,14 +34,33 @@ namespace Formativa.Users.Api.Controllers
         [HttpGet("{id}")]
         public  Task<UserDto> Get(int id)
         {
-            return  this.userService.FindById(id);
+            var d = 12;
+            var c = 0;
+            var x = d / c;
+
+            return this.userService.FindById(id);
         }
+
+
+        //[HttpGet("find")]
+        //public Task<List<User>> FindByName([FromQuery] string name)
+        //{
+        //    return this.userService.FindByName(name);
+        //}
+
+        [HttpGet("find")]
+        public Task<List<User>> FindByName([FromQuery] UserFilter filter)
+        {
+            return this.userService.FindByName(filter.Name);
+        }
+
 
         // POST api/values
         [HttpPost]
        
         public User Post([FromBody] User user)
         {
+           
             this.userService.Add(user);
 
             return user;

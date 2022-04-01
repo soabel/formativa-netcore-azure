@@ -65,7 +65,14 @@ namespace Formativa.Users.Api
             IMapper mapper = mappingConfig.CreateMapper();
             services.AddSingleton(mapper);
 
-            
+
+            //Cross Browsing Origin Support
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAnyOrigin",
+                    builder => builder
+                        .AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());
+            });
 
 
         }
@@ -73,9 +80,11 @@ namespace Formativa.Users.Api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseDeveloperExceptionPage();
+
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+               
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Formativa.Users.Api v1"));
             }
@@ -90,6 +99,8 @@ namespace Formativa.Users.Api
             {
                 endpoints.MapControllers();
             });
+
+            app.UseCors("AllowAnyOrigin");
         }
     }
 }
